@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="5sp"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:id="@+id/linearCategory"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height50"
+        android:background="@drawable/border_solid_light_red"
+        android:gravity="center_vertical">
+
+
+    <TextView
+        android:id="@+id/tvProduct"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/margin10"
+        android:fontFamily="@font/roboto_bold"
+        android:maxLength="25"
+        android:singleLine="true"
+        android:text="Chips"
+        android:textColor="@color/colorSecondary"
+        android:textSize="@dimen/headingTextSize"/>
+
+
+    <ImageView
+        android:id="@+id/iconArrowDown"
+        android:layout_width="@dimen/imageWidth24"
+        android:layout_height="@dimen/imageHeight24"
+        android:layout_marginEnd="@dimen/margin10"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_arrow_down"
+        app:tint="@color/colorSecondary" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/iconArrowUp"
+        android:layout_width="@dimen/imageWidth24"
+        android:layout_height="@dimen/imageHeight24"
+        android:layout_marginEnd="@dimen/margin10"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_arrow_up"
+        app:tint="@color/colorSecondary" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/subCategoryRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

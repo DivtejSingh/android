@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    tools:context=".ui.component.main.cart.CheckOutActivity">
+
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height60"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin5"
+        android:elevation="@dimen/elevation10"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/backLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="@dimen/imageWidth24"
+                android:layout_height="@dimen/imageHeight24"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin5"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Back"
+                android:textSize="@dimen/headingTextSize"
+                android:textColor="@color/colorPrimaryDark">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checkout"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/mainHeadingTextSize"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/bannerImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height120"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_banner"/>
+
+            <LinearLayout
+                android:id="@+id/deliveryMethodLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery Method"
+                    android:textSize="@dimen/headingTextSize"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_bold" />
+
+                <RadioGroup
+                    android:id="@+id/deliveryMethodRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_primary"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/margin10">
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dispatchToLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dispatch To"
+                    android:textSize="@dimen/headingTextSize"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_bold" />
+
+                <RadioGroup
+                    android:id="@+id/dispatchToRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_primary"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/margin10">
+
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/deliveryInstructionsInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height60"
+                app:boxStrokeWidth="0sp"
+                app:boxStrokeWidthFocused="0sp"
+                app:boxStrokeColor="@color/colorPrimaryDark"
+                app:boxBackgroundMode="filled"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin10">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/deliveryInstructionsInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Additional Delivery Instructions..."
+                    android:background="@drawable/border_primary"
+                    android:inputType="text"
+                    android:textSize="@dimen/baseTextSize"
+                    android:padding="10sp"
+            android:textColorHint="@color/borderGrey"
+                    android:fontFamily="@font/roboto_regular"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin10"
+                android:text="Order Summary"
+                android:textColor="@color/black"
+                android:textSize="@dimen/headingTextSize"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="@dimen/margin20"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/border_primary"
+                android:gravity="start"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin20">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10">
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="Order details"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@color/black"/>
+
+                        <LinearLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Units"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:id="@+id/tvUnitNo"
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="102"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin10">
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="SKUs"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:id="@+id/tvSkuNo"
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="4"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1sp"
+                        android:layout_marginTop="@dimen/margin10"
+                        android:layout_marginBottom="10sp"
+                        android:background="@color/lightGrey">
+
+                    </View>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="Delivery"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@color/black"/>
+
+                        <LinearLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Next Working Day Delivery"
+                                android:textSize="13sp"
+                                android:gravity="end"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:id="@+id/tvAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="6, Park Lane, Manchester, M45 7PB"
+                                android:textSize="13sp"
+                                android:gravity="end"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1sp"
+                        android:layout_marginTop="@dimen/margin10"
+                        android:layout_marginBottom="10sp"
+                        android:background="@color/lightGrey">
+
+                    </View>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10sp">
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="Summary"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@color/black"/>
+
+                        <LinearLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Subtotal"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:id="@+id/tvTotal"
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text= "@string/wallet_balance"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin10">
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Wallet Discount"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:id="@+id/tvWalletDiscount"
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/wallet_balance"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:layout_marginTop="@dimen/margin10">
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Coupon Discount"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:id="@+id/tvCouponDiscount"
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/wallet_balance"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin10">
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Delivery"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:id="@+id/tvDelivery"
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="FREE"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin10">
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="VAT (20%)"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:id="@+id/tvVat"
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/wallet_balance"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin10">
+                                <TextView
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Payment Total"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_bold"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:id="@+id/tvTotalPayment"
+                                    android:layout_width="0sp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/wallet_balance"
+                                    android:textSize="13sp"
+                                    android:gravity="end"
+                                    android:fontFamily="@font/roboto_bold"
+                                    android:textColor="@color/black"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height60"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin10">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/couponInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:boxStrokeWidth="0sp"
+                    app:boxStrokeWidthFocused="0sp"
+                    app:boxStrokeColor="@color/colorPrimaryDark"
+                    app:boxBackgroundMode="filled"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/couponInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Enter Coupon Code"
+                        android:background="@drawable/border_primary"
+                        android:inputType="text"
+                        android:textSize="@dimen/baseTextSize"
+                        android:padding="10sp"
+            android:textColorHint="@color/borderGrey"
+                        android:fontFamily="@font/roboto_regular"
+                        android:paddingEnd="60dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/applyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="8dp"
+                    android:text="APPLY"
+                    android:textSize="@dimen/baseTextSize"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/colorSecondary"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/textPayment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height40"
+                android:text="Continue to Payment"
+                android:textSize="@dimen/buttonTextSize"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/white"
+                android:background="@drawable/border_solid_secondary"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin10"
+                android:layout_marginBottom="@dimen/margin20"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

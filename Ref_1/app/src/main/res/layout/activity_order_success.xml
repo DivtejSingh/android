@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center"
+    tools:context=".ui.component.main.cart.OrderSuccessActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieCheckmark"
+        android:layout_width="300sp"
+        android:layout_height="300sp"
+        app:layout_constraintBottom_toTopOf="@id/textOrderPlaced"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/success" />
+
+    <TextView
+        android:id="@+id/textOrderPlaced"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/order_success"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:fontFamily="@font/roboto_bold" />
+
+    <TextView
+        android:id="@+id/textOrderMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin10"
+        android:layout_marginEnd="@dimen/margin10"
+        android:text="@string/order_success_message"
+        android:textColor="@color/textGrey"
+        android:textSize="@dimen/headingTextSize"
+        android:layout_marginTop="@dimen/margin10"
+        android:gravity="center"
+        android:fontFamily="@font/roboto_medium"/>
+
+    <TextView
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height40"
+        android:layout_marginTop="@dimen/margin20"
+        android:background="@drawable/border_solid_primary"
+        android:text="@string/continue_shopping"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_marginRight="@dimen/margin10"
+        android:gravity="center"
+        android:fontFamily="@font/roboto_bold"
+        android:textSize="@dimen/buttonTextSize"/>
+
+</LinearLayout>

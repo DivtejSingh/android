@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.component.main.cart.CartFragment">
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:elevation="@dimen/elevation10"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding16"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="@dimen/imageWidth24"
+            android:layout_height="@dimen/imageHeight24"
+            app:tint="@color/colorPrimaryDark"
+            android:src="@drawable/ic_cart_unselected"/>
+
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin8"
+            android:text="@string/cart"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/mainHeadingTextSize"
+            android:fontFamily="@font/roboto_bold" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bannerImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height120"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_banner"
+        android:layout_marginTop="@dimen/margin10"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartListRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/bannerImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearCartDetail"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/linearCartDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="20sp"
+        android:orientation="vertical"
+        app:contentPadding="@dimen/padding16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textItems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 Units"
+                    android:textSize="@dimen/buttonTextSize"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black" />
+
+                <View
+                    android:layout_width="@dimen/width2"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:layout_marginStart="@dimen/margin5"
+                    android:layout_marginEnd="@dimen/margin5" />
+
+                <TextView
+                    android:id="@+id/textSKU"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 SKUs"
+                    android:textSize="@dimen/buttonTextSize"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black" />
+
+                <View
+                    android:layout_width="@dimen/width2"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:layout_marginStart="@dimen/margin5"
+                    android:layout_marginEnd="@dimen/margin5" />
+
+                <TextView
+                    android:id="@+id/textTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="£24.25"
+                    android:textSize="@dimen/buttonTextSize"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black" />
+
+                <View
+                    android:layout_width="@dimen/width2"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:layout_marginStart="@dimen/margin5"
+                    android:layout_marginEnd="@dimen/margin5" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/imageWidth15"
+                        android:layout_height="@dimen/imageHeight15"
+                        android:src="@drawable/ic_wallet" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin5"
+                        android:text="@string/wallet_balance"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/buttonTextSize"
+                        android:fontFamily="@font/roboto_bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textDelivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:gravity="center"
+                android:text="Spend £225.75 more for FREE delivery"
+                android:textColor="@color/lightGrey"
+                android:textSize="@dimen/buttonTextSize"
+                android:fontFamily="@font/roboto_bold" />
+
+            <LinearLayout
+                android:id="@+id/checkoutLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height40"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin10"
+                android:background="@drawable/border_solid_secondary"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Checkout"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/buttonTextSize"
+                    android:fontFamily="@font/roboto_bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

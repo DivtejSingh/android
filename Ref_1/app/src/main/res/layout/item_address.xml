@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearAddress"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height60"
+    android:orientation="horizontal"
+    android:background="@drawable/border_primary"
+    android:gravity="center_vertical"
+    android:padding="@dimen/margin5"
+    android:layout_marginLeft="@dimen/margin10"
+    android:layout_marginRight="@dimen/margin10"
+    android:layout_marginTop="@dimen/margin10">
+
+    <ImageView
+        android:layout_width="25sp"
+        android:layout_height="25sp"
+        android:src="@drawable/ic_company"/>
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/margin10"
+        android:text="6, Park Lane, Manchester, M45 7PB"
+        android:textSize="13sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/black"
+        android:breakStrategy="simple" />
+
+
+    <ImageView
+        android:id="@+id/iconArrow"
+        android:layout_width="25sp"
+        android:layout_height="25sp"
+        android:src="@drawable/ic_arrow_right"
+        app:tint="@color/colorPrimaryDark" />
+</LinearLayout>
